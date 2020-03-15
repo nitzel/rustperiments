@@ -95,7 +95,18 @@ fn main() {
     for num in 0..=5 {
         print!("{}, ", num);
     }
+    println!(""); // new line
 
+    // Strings
+    //  str (pointer to bytes and length)
+    //  String(pointer to bytes, length and capacity)
+    //  str is often a subset of a String instance
+    //    Can't us str[n] to get a character because indexing
+    //    should guarantee constant access time, but reading utf-8
+    //    isn't doable in constant time. So either get str.bytes()[n] for
+    //    the corresponding byte OR iterate the str.chars()
+    //     iterators can be 'indexed' via .nth(n)
+    println!("Nth char in unicode str: {}", "AsdFgh".chars().nth(3).unwrap());
 
 }
 
