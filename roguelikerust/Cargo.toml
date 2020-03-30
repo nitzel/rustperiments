@@ -1,0 +1,12 @@
+[package]
+name = "twentyfourdaysofrust"
+version = "0.1.0"
+authors = ["nitzel <jan.s.92@web.de>"]
+edition = "2018"
+description = "Following the Roguelike in Rust tutorial https://bfnightly.bracketproductions.com/rustbook - source available at https://github.com/thebracket/rustrogueliketutorial"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rltk = { version = "0.7.0" }
+
