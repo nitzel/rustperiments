@@ -108,7 +108,51 @@ fn main() {
     //     iterators can be 'indexed' via .nth(n)
     println!("Nth char in unicode str: {}", "AsdFgh".chars().nth(3).unwrap());
 
+
+    let mut x: i32 = 5;
+    {
+        let y = &x;
+        println!("x={} y={}", x, y);
+    }
+    {
+        let y = &mut x;
+        (*y) += 1;
+        print!("y={}", y);
+    }
+    println!(" x={}", x);
+
+    //////////
+    /// Structs and Traits
+    struct Robot {
+        name: String
+    }
+
+    impl Robot {
+        fn new(count: i32) -> Self {
+            Self {
+                name: format!("Name#{}", count)
+            }
+        }
+        fn to_string(&self) -> String {
+            format!("[Robot] '{}'", self.name)
+        }
+    }
+
+    println!("1: {}", Robot::new(1).to_string()); // 1: [Robot] Name#1
+
+    trait Printable {
+        fn to_string(&self) -> String;
+    }
+
+    impl Printable for Robot {
+        fn to_string(&self) -> String {
+            format!("[Trait]{}", Robot::to_string(self))
+        }
+    }
+    println!("2: {}", Robot::new(2).to_string());  // 1: [Robot] Name#2
+    println!("3: {}", Printable::to_string(&Robot::new(3)))  // stack overflow
 }
+
 
 fn do_stuff(qty: f64, oz: f64) -> f64 {
     qty * oz
