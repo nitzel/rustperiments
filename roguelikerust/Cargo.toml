@@ -1,5 +1,5 @@
 [package]
-name = "twentyfourdaysofrust"
+name = "rostig"
 version = "0.1.0"
 authors = ["nitzel <jan.s.92@web.de>"]
 edition = "2018"
@@ -9,4 +9,5 @@ description = "Following the Roguelike in Rust tutorial https://bfnightly.bracke
 
 [dependencies]
 rltk = { version = "0.7.0" }
-
+specs = "0.16.1"
+specs-derive = "0.4.1"
