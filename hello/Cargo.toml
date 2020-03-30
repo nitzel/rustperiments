@@ -3,6 +3,7 @@ name = "hello"
 version = "0.1.0"
 authors = ["nitzel <jan.s.92@web.de>"]
 edition = "2018"
+description = "Followed the rust crash-course on https://www.skillshare.com/classes/Ultimate-Rust-Crash-Course/978741832/projects"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
