@@ -2,12 +2,10 @@ use rand::Rng;
 use std::cmp::Ordering;
 use std::io;
 use std::io::Write;
-use std::num::ParseIntError;
 
 pub fn main() {
     println!("## ch2.rs - a guessing game ##");
-    loop {
-        let number_of_guesses = run_game().expect("Something went wrong");
+    while let Some(number_of_guesses) = run_game() {
         println!(
             "Congratulations, you required only {} guesses",
             number_of_guesses
@@ -22,20 +20,24 @@ fn run_game() -> Option<u32> {
     println!("#######################");
     println!();
     let secret_number = rand::thread_rng().gen_range(0, 101);
-
+    println!("We chose a number between 0 and 100 (inclusive). Find it!");
     let mut number_of_guesses: u32 = 1;
     loop {
-        print!("Guess #{}: ", number_of_guesses);
+        print!("Guess #{} (type 'quit' to exit): ", number_of_guesses);
         io::stdout().flush().ok()?;
-        let mut raw_guess = String::new();
+        let mut guess = String::new();
         io::stdin()
-            .read_line(&mut raw_guess)
+            .read_line(&mut guess)
             .expect("Failed to read line");
-        let guess: Result<u32, ParseIntError> = raw_guess.trim().parse();
-        let guess = match guess {
+
+        if guess.to_lowercase().trim() == "quit" {
+            return None;
+        }
+
+        let guess: u32 = match guess.trim().parse() {
             Ok(x) => x,
             Err(_) => {
-                println!("No, '{}' is not a number", raw_guess.trim());
+                println!("No, '{}' is not a number", guess.trim());
                 continue;
             }
         };
