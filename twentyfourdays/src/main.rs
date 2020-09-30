@@ -1,6 +1,7 @@
-mod day3;
+#[path = "day4.rs"]
+mod day_x;
 
 fn main() {
     println!("## main.rs running ##");
-    day3::main();
+    day_x::main();
 }
