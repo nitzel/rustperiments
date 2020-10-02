@@ -6,5 +6,13 @@ edition = "2018"
 description = "The Book: https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+# [lib]
+# name = "thebooklib"
+# path = "src/lib.rs"
+
+[[bin]]
+name = "thebook"
+path = "src/main.rs"
+
 [dependencies]
 rand = "0.7.3"

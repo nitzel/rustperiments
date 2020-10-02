@@ -31,7 +31,7 @@ fn run_game() -> Option<u32> {
             .expect("Failed to read line");
 
         if guess.to_lowercase().trim() == "quit" {
-            return None;
+            break None;
         }
 
         let guess: u32 = match guess.trim().parse() {
@@ -47,7 +47,7 @@ fn run_game() -> Option<u32> {
             Ordering::Greater => println!("{} is too big", guess),
             Ordering::Equal => {
                 println!("You win! {} was correct!", guess);
-                return Some(number_of_guesses);
+                break Some(number_of_guesses);
             }
         }
 

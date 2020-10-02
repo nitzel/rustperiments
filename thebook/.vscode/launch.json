@@ -15,6 +15,28 @@
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": true,
+        },
+        {
+            "name": "(Windows) Launch without debugger",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "cargo",
+            "args": ["run"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+        },
+        {
+            "name": "(Windows) Test",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "cargo",
+            "args": ["test"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
         }
     ]
 }
