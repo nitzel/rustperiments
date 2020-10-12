@@ -1,4 +1,4 @@
-#[path = "ch5.rs"]
+#[path = "ch6.rs"]
 mod chapterx;
 
 use std::io;
